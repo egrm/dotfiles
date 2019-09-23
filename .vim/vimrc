@@ -104,7 +104,18 @@ set expandtab
 
 let mapleader=","
 
-" easymotion
+set termguicolors "enable truecolor
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set background=dark
+colorscheme solarized8_flat
+
+" save via <Leader>s
+noremap <Leader>s :w<CR>
+
+" --- plugins ---
+" --- easymotion ---
 let g:EasyMotion_smartcase = 1
 
 " <Leader>f{char} to move to {char}
@@ -119,28 +130,13 @@ map <Leader>l <Plug>(easymotion-bd-jk)
 " Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 
-" fzf
+" --- fzf ---
 map  <c-p> :Files<CR>
 map  <c-p> :<CR>
 
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-set background=dark
-colorscheme solarized8_flat
-
-" save via <Leader>s
-noremap <Leader>s :w<CR>
-
-" --- plugins ---
-
 " --- flow ---
-
 let g:flow#showquickfix = 0
 let g:flow#autoclose = 1 " don't open quickfix for flow if there are no errors
-
-" --- /flow ---
 
 " --- prettier ---
 let g:prettier#quickfix_enabled = 0
