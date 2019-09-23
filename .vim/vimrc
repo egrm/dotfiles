@@ -113,6 +113,9 @@ map  <Leader>f <Plug>(easymotion-bd-f)
 " Move to line
 map <Leader>l <Plug>(easymotion-bd-jk)
 
+" <Leader>m{char}{char} to move to {char}{char}
+"map <Leader>m <Plug>(easymotion-overwin-f2)
+
 " Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 
@@ -127,29 +130,19 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
 colorscheme solarized8_flat
 
-"if filereadable(expand("~/.vimrc_background"))
-"  let base16colorspace=256
-"  source ~/.vimrc_background
-"endif
-
-" " s{char}{char} to move to {char}{char}
-" nmap s <Plug>(easymotion-overwin-f2)
-" 
-" " Move to line
-" map <Leader>l <Plug>(easymotion-bd-jk)
-" nmap <Leader>l <Plug>(easymotion-overwin-line)
-" 
-" " Move to word
-" map  <Leader>w <Plug>(easymotion-bd-w)
-" nmap <Leader>w <Plug>(easymotion-overwin-w)
-
+" save via <Leader>s
 noremap <Leader>s :w<CR>
 
+" --- plugins ---
+
 " --- flow ---
+
 let g:flow#showquickfix = 0
+let g:flow#autoclose = 1 " don't open quickfix for flow if there are no errors
+
+" --- /flow ---
 
 " --- prettier ---
-
 let g:prettier#quickfix_enabled = 0
 
 let g:prettier#autoformat = 0
@@ -192,10 +185,11 @@ let g:prettier#config#prose_wrap = 'preserve'
 let g:prettier#config#html_whitespace_sensitivity = 'css'
 
 let g:prettier#exec_cmd_path = "~/usr/local/bin/prettier"
+" --- /prettier ---
 
 " ale
 "let g:ale_fixers = {}
 "let g:ale_fixers.javascript = ['eslint']
 "let g:ale_fix_on_save = 1
 
-let g:flow#autoclose = 1 " don't open quickfix for flow if there are no errors
+" --- /plugins ---
