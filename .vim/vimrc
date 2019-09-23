@@ -132,7 +132,6 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 
 " --- fzf ---
 map  <c-p> :Files<CR>
-map  <c-p> :<CR>
 
 " --- flow ---
 let g:flow#showquickfix = 0
